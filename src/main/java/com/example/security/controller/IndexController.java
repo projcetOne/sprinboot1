@@ -36,10 +36,7 @@ public class IndexController {
         return "loginForm";
     }
 
-    @GetMapping("/joinForm")
-    public String joinForm() {
-        return "joinForm";
-    }
+
 
     @PostMapping("/join")
     public String join(User user) {
