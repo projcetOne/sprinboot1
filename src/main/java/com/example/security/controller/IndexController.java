@@ -41,14 +41,4 @@ public class IndexController {
         return "joinForm";
     }
 
-    @PostMapping("/join")
-    public String join(User user) {
-        System.out.println(user);
-        user.setRole("ROLE_USER");
-        String rawPassword = user.getPassword();
-        String encPassword = bCryptPasswordEncoder.encode(rawPassword);
-        user.setPassword(encPassword);
-        userRepository.save(user);
-        return "redirect:/loginForm";
-    }
 }
